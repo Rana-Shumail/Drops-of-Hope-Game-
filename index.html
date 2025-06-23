@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drops of Hope Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Drops of Hope</h1>
+        <div id="score">Score: 0</div>
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        <div class="buttons">
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+        <div id="message"></div>
+    </div>
+    <audio id="waterSound" src="water.mp3" preload="auto"></audio>
+    <audio id="bacteriaSound" src="bacteria.mp3" preload="auto"></audio>
+    <audio id="wasteSound" src="waste.mp3" preload="auto"></audio>
+    <div id="popup" class="popup">
+        <span id="closePopup" class="close">&times;</span>
+        <div id="popupContent"></div>
+        <canvas id="confettiCanvas" width="400" height="600" style="display:none; position:absolute; left:0; top:0; pointer-events:none;"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
