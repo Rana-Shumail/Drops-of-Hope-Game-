@@ -277,15 +277,8 @@ function update() {
             checkMilestones();
         } else if (obj.y - obj.size > CAN_HEIGHT) {
             // Missed object
-            if (obj.type === 'water') {
-                // Missed water drop: penalty
-                score -= 1;
-                hasScored = true;
-                waterSound.currentTime = 0;
-                waterSound.play();
-                flashRed();
-                checkMilestones();
-            }
+            // Do NOT subtract score for missed water drops anymore
+            // Only remove the object if missed
             objects.splice(i, 1);
         }
     }
@@ -321,12 +314,19 @@ function checkMilestones() {
 // Show milestone message in sidebar (disappears after 5 seconds)
 let milestoneSidebarTimeout = null;
 function showMilestoneSidebar(message) {
+    // Ensure the sidebar element exists and is visible
     const sidebar = document.getElementById('milestone-sidebar');
+    if (!sidebar) return;
+    sidebar.style.display = 'block'; // Ensure it's visible
     sidebar.textContent = message;
     sidebar.classList.add('active');
     if (milestoneSidebarTimeout) clearTimeout(milestoneSidebarTimeout);
     milestoneSidebarTimeout = setTimeout(() => {
         sidebar.classList.remove('active');
+        // Optionally hide after animation
+        setTimeout(() => {
+            sidebar.style.display = 'none';
+        }, 500);
     }, 5000);
 }
 
