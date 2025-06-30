@@ -5,11 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drops of Hope Game</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Charity: water uses Montserrat, so we use it from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="game-container">
         <h1>Drops of Hope</h1>
+        <!-- Difficulty selector -->
+        <div id="difficulty-section">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="normal" selected>Normal</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
         <div id="score">Score: 0</div>
+        <!-- Milestone sidebar -->
+        <div id="milestone-sidebar"></div>
         <canvas id="gameCanvas" width="400" height="600"></canvas>
         <div class="buttons">
             <button id="startBtn">Start</button>
@@ -26,6 +39,12 @@
         <div id="popupContent"></div>
         <canvas id="confettiCanvas" width="400" height="600" style="display:none; position:absolute; left:0; top:0; pointer-events:none;"></canvas>
     </div>
+    <!-- Footer with charity: water links -->
+    <footer id="footer">
+        <span>Support clean water for all: </span>
+        <a href="https://www.charitywater.org/" target="_blank" rel="noopener">charity: water</a> |
+        <a href="https://www.charitywater.org/donate" target="_blank" rel="noopener">Donate</a>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

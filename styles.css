@@ -1,6 +1,6 @@
 body {
     background: #e0f7fa;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,6 +13,24 @@ body {
     width: 100vw;
     max-width: 430px;
     margin: 0 auto;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    position: relative;
+}
+/* Difficulty selector styling */
+#difficulty-section {
+    margin-bottom: 12px;
+    font-size: 1.1em;
+    color: #0277bd;
+    font-weight: 600;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+#difficulty {
+    margin-left: 8px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #b3e5fc;
+    font-family: inherit;
+    font-size: 1em;
 }
 #gameCanvas {
     background: #b3e5fc;
@@ -138,4 +156,55 @@ button:hover {
     width: 100vw !important;
     height: 100vh !important;
     z-index: 1100;
+}
+/* Footer styling */
+#footer {
+    width: 100vw;
+    max-width: 430px;
+    margin: 24px auto 0 auto;
+    text-align: center;
+    font-size: 1.1em;
+    color: #0277bd;
+    font-family: 'Montserrat', Arial, sans-serif;
+    padding: 16px 0 8px 0;
+    background: #fffde7;
+    border-top: 2px solid #ffd600;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+}
+#footer a {
+    color: #ffd600;
+    text-decoration: underline;
+    font-weight: 700;
+    margin: 0 6px;
+    transition: color 0.2s;
+}
+#footer a:hover {
+    color: #0277bd;
+}
+#milestone-sidebar {
+    position: absolute;
+    right: 0;
+    top: 90px;
+    width: 180px;
+    min-height: 40px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 10px 0 0 10px;
+    box-shadow: -2px 2px 12px rgba(2,119,189,0.07);
+    color: #0277bd;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.08em;
+    font-weight: 600;
+    padding: 12px 16px;
+    z-index: 20;
+    display: none;
+    text-align: left;
+    pointer-events: none;
+}
+#milestone-sidebar.active {
+    display: block;
+    animation: fadeInSidebar 0.5s;
+}
+@keyframes fadeInSidebar {
+    from { opacity: 0; right: -40px; }
+    to { opacity: 1; right: 0; }
 }
